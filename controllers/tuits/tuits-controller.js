@@ -1,11 +1,21 @@
 import posts from "./tuits.js";
+
 let tuits = posts;
 
 const createTuit = (req, res) => {
     const newTuit = req.body;
-    newTuit._id = (new Date()).getTime()+'';
+    newTuit._id = (new Date()).getTime() + '';
     newTuit.likes = 0;
     newTuit.liked = false;
+    newTuit.dislikes = 0;
+    newTuit.replies = 0;
+    newTuit.retuits = 0;
+    newTuit.topic = "VishalNodeJs_A8"
+    newTuit.username = "Vishal";
+    newTuit.handle = "@vishal";
+    newTuit.title = "NodeJS_A8"
+    newTuit.tuit = "Testing create tuits controller in node.js and calling it using reactjs application";
+    newTuit.time = "1h";
     tuits.push(newTuit);
     res.json(newTuit);
 }
@@ -29,7 +39,6 @@ const deleteTuit = (req, res) => {
                              t._id !== tuitdIdToDelete);
     res.sendStatus(200);
 }
-
 
 export default (app) => {
     app.post('/api/tuits', createTuit);

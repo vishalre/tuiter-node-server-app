@@ -1,4 +1,5 @@
 import people from './users.js'
+
 let users = people
 
 const UserController = (app) => {
@@ -42,7 +43,7 @@ const findUserById = (req, res) => {
 
 const findUsers = (req, res) => {
     const type = req.query.type
-    if(type) {
+    if (type) {
         const usersOfType = users
             .filter(u => u.type === type)
         res.json(usersOfType)
