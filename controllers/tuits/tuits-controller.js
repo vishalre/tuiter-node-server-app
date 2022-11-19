@@ -13,9 +13,10 @@ const createTuit = (req, res) => {
     newTuit.topic = "VishalNodeJs_A8"
     newTuit.username = "Vishal";
     newTuit.handle = "@vishal";
-    newTuit.title = "NodeJS_A8"
-    newTuit.tuit = "Testing create tuits controller in node.js and calling it using reactjs application";
+    newTuit.title = "NodeJS_A8";
     newTuit.time = "1h";
+    newTuit.image =
+        "https://www.pngfind.com/pngs/m/299-2995596_nasa-logo-photo-nasa-logo-1-1-hd.png";
     tuits.push(newTuit);
     res.json(newTuit);
 }
